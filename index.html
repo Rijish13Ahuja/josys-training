@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffeine Haven Coffee Shop</title>
+</head>
+<body>
+
+    <header>
+        <h1>Caffeine Haven Coffee Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Our Offerings</a></li>
+                <li><a href="#testimonials">Customer Feedback</a></li>
+                <li><a href="#reservation">Book a Table</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome">
+            <h2>Welcome to Caffeine Haven</h2>
+            <p>Your ultimate destination for a delightful coffee experience! Enjoy our freshly brewed beverages crafted from the finest quality beans.</p>
+            <img src="https://via.placeholder.com/600x300" alt="Cozy Coffee Shop Ambiance" />
+        </section>
+
+        <section id="menu">
+            <h2>Our Offerings</h2>
+        
+            <h3>Coffee Selections</h3>
+            <ul>
+                <li>
+                    <label>
+                        <input type="checkbox" name="coffee" value="espresso"> Espresso - $3.00
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="coffee" value="latte"> Latte - $4.50
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="coffee" value="cappuccino"> Cappuccino - $4.00
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="coffee" value="cold_brew"> Cold Brew - $4.00
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="text" name="custom_coffee" placeholder="Create your custom coffee">
+                    </label>
+                </li>
+            </ul>
+        
+            <h3>Tea Choices</h3>
+            <ul>
+                <li>
+                    <label>
+                        <input type="radio" name="tea" value="green_tea"> Green Tea - $2.50
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="tea" value="chai_latte"> Chai Latte - $3.50
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="tea" value="herbal_tea"> Herbal Tea - $2.00
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Select your preferred brew date:
+                        <input type="date" name="tea_date">
+                    </label>
+                </li>
+            </ul>
+        
+            <h3>Baked Goods</h3>
+            <ul>
+                <li>
+                    <label>
+                        <input type="checkbox" name="pastry" value="blueberry_muffin"> Blueberry Muffin - $2.00
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="pastry" value="croissant"> Croissant - $2.50
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="pastry" value="chocolate_chip_cookie"> Chocolate Chip Cookie - $1.50
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="number" name="pastry_quantity" min="1" max="10" placeholder="Quantity">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Additional requests:
+                        <textarea name="pastry_request" rows="2" placeholder="Any special requests"></textarea>
+                    </label>
+                </li>
+            </ul>
+        
+            <h3>Daily Specials</h3>
+            <ul>
+                <li>
+                    <label>
+                        <input type="checkbox" name="special" value="mocha"> Mocha - $4.50
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="special" value="matcha_latte"> Matcha Latte - $5.00
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="file" name="special_file"> Upload a recipe
+                    </label>
+                </li>
+            </ul>
+        
+            <h3>Your Feedback</h3>
+            <ul>
+                <li>
+                    <label>
+                        <input type="text" name="feedback" placeholder="Share your feedback">
+                    </label>
+                </li>
+                <li>
+                    <button type="submit">Send Feedback</button>
+                </li>
+            </ul>
+        </section>
+
+        <section id="testimonials">
+            <h2>What Our Customers Are Saying</h2>
+            <blockquote>
+                <p>"Caffeine Haven is my favorite coffee spot! The atmosphere is inviting, and the staff is welcoming." - Sarah K.</p>
+            </blockquote>
+            <blockquote>
+                <p>"The cappuccino here is the best I’ve ever tasted! I tell all my friends about it." - John D.</p>
+            </blockquote>
+            <blockquote>
+                <p>"A lovely place to unwind and savor a great cup of coffee. Highly recommend!" - Emily R.</p>
+            </blockquote>
+        </section>
+
+        <section id="reservation">
+            <h2>Book a Table</h2>
+            <form action="#" method="post">
+                <h2>Table Booking</h2>
+            
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+            
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required><br><br>
+            
+                <label for="date">Reservation Date:</label>
+                <input type="date" id="date" name="date" required><br><br>
+            
+                <label for="time">Reservation Time:</label>
+                <input type="time" id="time" name="time" required><br><br>
+            
+                <label for="people">Number of Guests:</label>
+                <input type="number" id="people" name="people" min="1" required><br><br>
+            
+                <label for="special-requests">Any Special Requests:</label><br>
+                <textarea id="special-requests" name="special-requests" rows="4" placeholder="Enter any special requests"></textarea><br><br>
+            
+                <fieldset>
+                    <legend>Seating Preference:</legend>
+                    <label>
+                        <input type="radio" name="seating" value="indoor" required> Indoor
+                    </label><br>
+                    <label>
+                        <input type="radio" name="seating" value="outdoor"> Outdoor
+                    </label><br>
+                </fieldset><br>
+            
+                <fieldset>
+                    <legend>Dietary Preferences:</legend>
+                    <label>
+                        <input type="checkbox" name="meal-preference" value="vegetarian"> Vegetarian
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="meal-preference" value="vegan"> Vegan
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="meal-preference" value="gluten-free"> Gluten-Free
+                    </label><br>
+                </fieldset><br>
+            
+                <label for="upload-file">Upload Menu or Preferences:</label>
+                <input type="file" id="upload-file" name="upload-file"><br><br>
+            
+                <button type="submit">Book Now</button>
+            </form>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Caffeine Haven Coffee Shop. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
