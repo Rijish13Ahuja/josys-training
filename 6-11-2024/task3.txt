@@ -1,0 +1,34 @@
+class randomArray {
+    constructor() {
+        this.items = [];
+    }
+
+    addItem(item) {
+        if (!this.items.includes(item)) {
+            this.items.push(item);
+            console.log(item, "added");
+        } else {
+            console.log(item, "exists");
+        }
+    }
+
+    deleteItem(item) {
+        const index = this.items.indexOf(item);
+        if (index !== -1) {
+            this.items.splice(index, 1);
+            console.log(item, "deleted");
+        } else {
+            console.log(item, "not found");
+        }
+    }
+
+    showItems() {
+        console.log("Items:", this.items);
+    }
+}
+
+const array = new randomArray();
+array.addItem("book");     
+array.addItem("pen");      
+array.deleteItem("pen");   
+array.showItems();        
