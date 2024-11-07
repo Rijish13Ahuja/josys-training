@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Operations</title>
+  </head>
+  <body>
+    <h2>Mathematical Operations</h2>
+    <label for="firstNumber">First Number:</label>
+    <input
+      type="text"
+      id="firstNumber"
+      inputmode="numeric"
+      placeholder="Enter first number"
+    /><br /><br />
+
+    <label for="secondNumber">Second Number:</label>
+    <input
+      type="text"
+      id="secondNumber"
+      inputmode="numeric"
+      placeholder="Enter second number"
+    /><br /><br />
+
+    <button onclick="performOperation(event)">Add</button>
+    <button onclick="performOperation(event)">Sub</button>
+    <button onclick="performOperation(event)">Multiply</button>
+    <button onclick="performOperation(event)">Div</button>
+
+    <h3 id="result">Result:</h3>
+
+    <script>
+      function performOperation(event) {
+        const firstNumber = parseFloat(
+          document.getElementById("firstNumber").value
+        );
+        const secondNumber = parseFloat(
+          document.getElementById("secondNumber").value
+        );
+
+        if (isNaN(firstNumber) || isNaN(secondNumber)) {
+          alert("Please enter valid numbers.");
+          return;
+        }
+
+        let result;
+        switch (event.target.innerText) {
+          case "Add":
+            result = firstNumber + secondNumber;
+            break;
+          case "Sub":
+            result = firstNumber - secondNumber;
+            break;
+          case "Multiply":
+            result = firstNumber * secondNumber;
+            break;
+          case "Div":
+            if (secondNumber === 0) {
+              alert("Cannot divide by zero.");
+              return;
+            }
+            result = firstNumber / secondNumber;
+            break;
+          default:
+            result = "Invalid operation";
+        }
+
+        document.getElementById("result").textContent = Result: ;
+      }
+    </script>
+  </body>
+</html>
