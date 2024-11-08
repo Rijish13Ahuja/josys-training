@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      table {
+        margin: 20px auto;
+        border-collapse: collapse;
+        width: 50%;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      input {
+        margin: 5px;
+        padding: 8px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .error-message {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Employee Details</h2>
+
+    <form id="employeeForm">
+      <label for="employeeId">Employee ID:</label>
+      <input type="text" id="employeeId" placeholder="Enter Employee ID" />
+      <br /><br />
+
+      <label for="employeeName">Employee Name:</label>
+      <input type="text" id="employeeName" placeholder="Enter Employee Name" />
+      <br /><br />
+
+      <label for="position">Position:</label>
+      <input type="text" id="position" placeholder="Enter Position" />
+      <br /><br />
+
+      <label for="salary">Salary:</label>
+      <input type="number" id="salary" placeholder="Enter Salary" />
+      <br /><br />
+
+      <button type="button" onclick="addEmployee()">Add Employee</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Position</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody id="employeeTable"></tbody>
+    </table>
+
+    <script>
+      function addEmployee() {
+        const employeeId = document.getElementById("employeeId").value;
+        const employeeName = document.getElementById("employeeName").value;
+        const position = document.getElementById("position").value;
+        const salary = document.getElementById("salary").value;
+
+        if (!employeeId || !employeeName || !position || !salary) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        const table = document.getElementById("employeeTable");
+        const row = table.insertRow();
+
+        row.insertCell(0).textContent = employeeId;
+        row.insertCell(1).textContent = employeeName;
+        row.insertCell(2).textContent = position;
+        row.insertCell(3).textContent = salary;
+
+        document.getElementById("employeeForm").reset();
+
+        const successMessage = document.createElement("p");
+        successMessage.textContent = "Employee added successfully!";
+        successMessage.classList.add("success-message");
+        document.body.appendChild(successMessage);
+
+        setTimeout(() => {
+          successMessage.remove();
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

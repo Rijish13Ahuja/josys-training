@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mathematical Operations</title>
+  </head>
+  <body>
+    <h2>Mathematical Operations</h2>
+    <label for="item">Product Name:</label>
+    <input type="text" id="item" placeholder="Enter product name" />
+    <br /><br />
+
+    <label for="price">Price per Unit:</label>
+    <input type="number" id="price" placeholder="Enter price" />
+    <br /><br />
+
+    <label for="qty">Quantity:</label>
+    <input type="number" id="qty" placeholder="Enter quantity" />
+    <br /><br />
+
+    <button onclick="calculateTotal()">Calculate Total</button>
+
+    <h3 id="total">Result:</h3>
+
+    <script>
+      function calculateTotal() {
+        const itemName = document.getElementById("item").value;
+        const pricePerUnit = parseFloat(document.getElementById("price").value);
+        const quantity = parseInt(document.getElementById("qty").value);
+
+        if (isNaN(pricePerUnit) || isNaN(quantity)) {
+          alert(" Enter valid numbers for price and quantity.");
+          return;
+        }
+
+        if (!confirm(Do you want to calculate the total for ?)) {
+          return;
+        }
+
+        let discount = 0;
+        if (quantity > 30) {
+          discount = 0.2;
+        } else if (quantity > 20) {
+          discount = 0.15;
+        } else if (quantity > 10) {
+          discount = 0.1;
+        }
+
+        const total = pricePerUnit * quantity * (1 - discount);
+        document.getElementById(
+          "total"
+        ).textContent = Total Amount: ;
+      }
+    </script>
+  </body>
+</html>
