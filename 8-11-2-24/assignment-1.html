@@ -3,57 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random Number</title>
+    <title>University Search</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f8f9fa;
+      }
+      h2 {
+        color: #333;
+      }
+      #country {
+        padding: 8px;
+        font-size: 16px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        padding: 8px 12px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #message {
+        color: #dc3545;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      ol {
+        margin-top: 20px;
+        padding-left: 20px;
+      }
+      li {
+        padding: 8px;
+        font-size: 16px;
+      }
+      li:nth-child(odd) {
+        background-color: #f0f0f0;
+      }
+      li:nth-child(even) {
+        background-color: #ffffff;
+      }
+    </style>
   </head>
   <body>
-    <h2>Random Number</h2>
-    <button onclick="generateRandomNumber()">Generate Number</button>
-    <p id="rolledNumber"></p>
-    <p id="result"></p>
+    <div>
+      <h2>University Search</h2>
+      <input type="text" id="country" placeholder="Enter country name" />
+      <button onclick="getUniversities()">Get Universities</button>
+      <p id="message"></p>
+      <ol id="universityList"></ol>
+    </div>
 
     <script>
-      function generateRandomNumber() {
-        const randomNumberPromise = new Promise((resolve, reject) => {
-          const number = Math.floor(Math.random() * 50) + 1;
-          document.getElementById(
-            "rolledNumber"
-          ).textContent = Rolled Number: ;
-          if (number % 5 === 0) {
-            resolve(number);
-          } else {
-            reject(The number  is not a multiple of 5.);
+      async function getUniversities() {
+        const country = document.getElementById("country").value.trim();
+        const url = http://universities.hipolabs.com/search?country=;
+
+        try {
+          const response = await fetch(url);
+          if (!response.ok) throw new Error("Network response was not ok");
+          const data = await response.json();
+
+          if (data.length === 0) {
+            document.getElementById("message").textContent =
+              "No universities found for this country.";
+            return;
           }
-        });
 
-        randomNumberPromise
-          .then((result) => {
-            document.getElementById(
-              "result"
-            ).textContent = Success! The number  is a multiple of 5.;
-          })
-          .catch((error) => {
-            document.getElementById("result").textContent = Error: Cannot find path 'C:\Users\rhyth\josys-training\8-11-2024\' because it does not exist. Cannot find path 'C:\Users\rhyth\josys-training\8-11-2024' because it does not exist. Cannot find path 'C:\Users\rhyth\josys-training\7-11-2024\assignment-1' because it does not exist. Cannot find path 'assignment-1.html' because it does not exist. System.Management.Automation.ParseException: At line:1 char:4
-+ for i in {1..5}; do
-+    ~
-Missing opening '(' after keyword 'for'.
+          document.getElementById("message").textContent = "";
+          const limitedData = data.slice(0, 20);
+          const universityList = document.getElementById("universityList");
+          universityList.innerHTML = "";
 
-At line:1 char:20
-+ for i in {1..5}; do
-+                    ~
-Missing statement body in do loop.
-   at System.Management.Automation.Runspaces.PipelineBase.Invoke(IEnumerable input)
-   at Microsoft.PowerShell.Executor.ExecuteCommandHelper(Pipeline tempPipeline, Exception& exceptionThrown, ExecutionOptions options) System.Management.Automation.ParseException: At line:5 char:4
-+ for i in {1..5}; do
-+    ~
-Missing opening '(' after keyword 'for'.
-
-At line:5 char:20
-+ for i in {1..5}; do
-+                    ~
-Missing statement body in do loop.
-   at System.Management.Automation.Runspaces.PipelineBase.Invoke(IEnumerable input)
-   at Microsoft.PowerShell.Executor.ExecuteCommandHelper(Pipeline tempPipeline, Exception& exceptionThrown, ExecutionOptions options) A parameter cannot be found that matches parameter name 'Chord'. A parameter cannot be found that matches parameter name 'Chord'. A parameter cannot be found that matches parameter name 'Chord'. A parameter cannot be found that matches parameter name 'Chord'.;
+          limitedData.forEach((university, index) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = ${university.name} - ;
+            universityList.appendChild(listItem);
           });
+        } catch (error) {
+          document.getElementById("message").textContent =
+            "Failed to fetch data. Please try again later.";
+        }
       }
     </script>
   </body>
