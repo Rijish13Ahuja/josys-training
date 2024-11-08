@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User List with Removal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        color: purple;
+      }
+
+      .remove-button {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>JavaScript Programming - User Data</h2>
+    <button onclick="getUserDetails()">Load Users</button>
+
+    <table id="userList" style="display: none">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Avatar</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableData"></tbody>
+    </table>
+
+    <script>
+      async function getUserDetails() {
+        try {
+          // Fetching data from the API using the fetch() method
+          const response = await fetch("https://reqres.in/api/users");
+          const data = await response.json();
+          const users = data.data;
+
+          // Get the table body element where rows will be added
+          const tableData = document.getElementById("tableData");
+          tableData.innerHTML = ""; // Clear any previous data
+
+          // Loop through the fetched users and create table rows
+          users.forEach((user) => {
+            const row = tableData.insertRow();
+
+            // Create and append the cells for each user property
+            const emailCell = row.insertCell();
+            emailCell.textContent = user.email;
+
+            const firstNameCell = row.insertCell();
+            firstNameCell.textContent = user.first_name;
+
+            const lastNameCell = row.insertCell();
+            lastNameCell.textContent = user.last_name;
+
+            const avatarCell = row.insertCell();
+            const image = document.createElement("img");
+            image.src = user.avatar;
+            image.alt = user.first_name;
+            image.style.width = "50px";
+            image.style.height = "50px";
+            image.style.borderRadius = "50%";
+            avatarCell.appendChild(image);
+
+            // Create a remove button and add it to the last cell
+            const removeCell = row.insertCell();
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.className = "remove-button";
+            removeButton.onclick = () => row.remove(); // Remove row when clicked
+            removeCell.appendChild(removeButton);
+          });
+
+          // Make the table visible once data is loaded
+          document.getElementById("userList").style.display = "table";
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      }
+    </script>
+  </body>
+</html>
