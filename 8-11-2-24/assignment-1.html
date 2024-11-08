@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Number</title>
+  </head>
+  <body>
+    <h2>Random Number</h2>
+    <button onclick="generateRandomNumber()">Generate Number</button>
+    <p id="rolledNumber"></p>
+    <p id="result"></p>
+
+    <script>
+      function generateRandomNumber() {
+        const randomNumberPromise = new Promise((resolve, reject) => {
+          const number = Math.floor(Math.random() * 50) + 1;
+          document.getElementById(
+            "rolledNumber"
+          ).textContent = Rolled Number: ;
+          if (number % 5 === 0) {
+            resolve(number);
+          } else {
+            reject(The number  is not a multiple of 5.);
+          }
+        });
+
+        randomNumberPromise
+          .then((result) => {
+            document.getElementById(
+              "result"
+            ).textContent = Success! The number  is a multiple of 5.;
+          })
+          .catch((error) => {
+            document.getElementById("result").textContent = Error: Cannot find path 'C:\Users\rhyth\josys-training\8-11-2024\' because it does not exist. Cannot find path 'C:\Users\rhyth\josys-training\8-11-2024' because it does not exist. Cannot find path 'C:\Users\rhyth\josys-training\7-11-2024\assignment-1' because it does not exist. Cannot find path 'assignment-1.html' because it does not exist. System.Management.Automation.ParseException: At line:1 char:4
++ for i in {1..5}; do
++    ~
+Missing opening '(' after keyword 'for'.
+
+At line:1 char:20
++ for i in {1..5}; do
++                    ~
+Missing statement body in do loop.
+   at System.Management.Automation.Runspaces.PipelineBase.Invoke(IEnumerable input)
+   at Microsoft.PowerShell.Executor.ExecuteCommandHelper(Pipeline tempPipeline, Exception& exceptionThrown, ExecutionOptions options) System.Management.Automation.ParseException: At line:5 char:4
++ for i in {1..5}; do
++    ~
+Missing opening '(' after keyword 'for'.
+
+At line:5 char:20
++ for i in {1..5}; do
++                    ~
+Missing statement body in do loop.
+   at System.Management.Automation.Runspaces.PipelineBase.Invoke(IEnumerable input)
+   at Microsoft.PowerShell.Executor.ExecuteCommandHelper(Pipeline tempPipeline, Exception& exceptionThrown, ExecutionOptions options) A parameter cannot be found that matches parameter name 'Chord'. A parameter cannot be found that matches parameter name 'Chord'. A parameter cannot be found that matches parameter name 'Chord'. A parameter cannot be found that matches parameter name 'Chord'.;
+          });
+      }
+    </script>
+  </body>
+</html>
