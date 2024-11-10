@@ -6,54 +6,94 @@
     <title>University Search</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        margin: 0;
-        background-color: #f8f9fa;
+        flex-direction: column;
       }
+
       h2 {
         color: #333;
+        font-size: 2rem;
+        margin-bottom: 20px;
       }
-      #country {
-        padding: 8px;
+
+      input[type="text"] {
+        padding: 10px;
         font-size: 16px;
         margin-right: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
+        width: 250px;
+        transition: border-color 0.3s ease;
       }
+
+      input[type="text"]:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
       button {
-        padding: 8px 12px;
+        padding: 10px 20px;
         font-size: 16px;
         color: #fff;
         background-color: #007bff;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        transition: background-color 0.3s ease;
       }
+
       button:hover {
         background-color: #0056b3;
       }
+
       #message {
         color: #dc3545;
         font-weight: bold;
         margin-top: 10px;
       }
+
       ol {
         margin-top: 20px;
         padding-left: 20px;
+        list-style-type: decimal;
+        max-width: 600px;
+        width: 100%;
+        padding: 0;
       }
+
       li {
-        padding: 8px;
+        padding: 12px;
         font-size: 16px;
+        border-bottom: 1px solid #ddd;
       }
+
       li:nth-child(odd) {
-        background-color: #f0f0f0;
+        background-color: #f9f9f9;
       }
+
       li:nth-child(even) {
         background-color: #ffffff;
+      }
+
+      @media screen and (max-width: 600px) {
+        input[type="text"] {
+          width: 200px;
+        }
+
+        button {
+          width: 200px;
+        }
+
+        ol {
+          width: 90%;
+        }
       }
     </style>
   </head>
@@ -69,7 +109,7 @@
     <script>
       async function getUniversities() {
         const country = document.getElementById("country").value.trim();
-        const url = http://universities.hipolabs.com/search?country=;
+        const url = `http://universities.hipolabs.com/search?country=${country}`;
 
         try {
           const response = await fetch(url);
@@ -87,9 +127,9 @@
           const universityList = document.getElementById("universityList");
           universityList.innerHTML = "";
 
-          limitedData.forEach((university, index) => {
+          limitedData.forEach((university) => {
             const listItem = document.createElement("li");
-            listItem.textContent = ${university.name} - ;
+            listItem.textContent = `${university.name} - ${university.country}`;
             universityList.appendChild(listItem);
           });
         } catch (error) {
