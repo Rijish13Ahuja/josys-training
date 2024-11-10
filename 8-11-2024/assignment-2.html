@@ -6,32 +6,101 @@
     <title>User List with Removal</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Arial", sans-serif;
         text-align: center;
         margin-top: 30px;
+        background-color: #f4f7fb;
+      }
+
+      h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      button {
+        padding: 12px 30px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
       }
 
       table {
         width: 80%;
         margin: 20px auto;
         border-collapse: collapse;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
       th,
       td {
-        border: 1px solid black;
-        padding: 10px;
+        border: 1px solid #ddd;
+        padding: 12px;
         text-align: center;
+        font-size: 16px;
       }
 
       th {
         background-color: #f2f2f2;
-        color: purple;
+        color: #4a4a4a;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
       }
 
       .remove-button {
-        padding: 5px 10px;
+        padding: 6px 12px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
         cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+
+      .remove-button:hover {
+        background-color: #c82333;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #ddd;
+      }
+
+      #userList {
+        display: none;
+      }
+
+      @media screen and (max-width: 768px) {
+        table {
+          width: 95%;
+        }
+
+        th,
+        td {
+          font-size: 14px;
+        }
+
+        button {
+          padding: 8px 20px;
+          font-size: 14px;
+        }
       }
     </style>
   </head>
@@ -39,7 +108,7 @@
     <h2>JavaScript Programming - User Data</h2>
     <button onclick="getUserDetails()">Load Users</button>
 
-    <table id="userList" style="display: none">
+    <table id="userList">
       <thead>
         <tr>
           <th>Email</th>
@@ -60,7 +129,7 @@
           const users = data.data;
 
           const tableData = document.getElementById("tableData");
-          tableData.innerHTML = ""; 
+          tableData.innerHTML = "";
 
           users.forEach((user) => {
             const row = tableData.insertRow();
@@ -78,16 +147,13 @@
             const image = document.createElement("img");
             image.src = user.avatar;
             image.alt = user.first_name;
-            image.style.width = "50px";
-            image.style.height = "50px";
-            image.style.borderRadius = "50%";
             avatarCell.appendChild(image);
 
             const removeCell = row.insertCell();
             const removeButton = document.createElement("button");
             removeButton.textContent = "Remove";
             removeButton.className = "remove-button";
-            removeButton.onclick = () => row.remove(); 
+            removeButton.onclick = () => row.remove();
             removeCell.appendChild(removeButton);
           });
 
