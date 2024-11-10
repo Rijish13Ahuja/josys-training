@@ -6,68 +6,111 @@
     <title>Employee Details</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 50px;
+        font-family: "Arial", sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
       }
-
-      table {
-        margin: 20px auto;
-        border-collapse: collapse;
-        width: 50%;
+      h2 {
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 20px;
       }
-
-      table,
-      th,
-      td {
-        border: 1px solid black;
-        padding: 10px;
+      #employeeForm {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 300px;
+        margin-bottom: 20px;
       }
-
-      th {
-        background-color: #f2f2f2;
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
       }
-
       input {
-        margin: 5px;
-        padding: 8px;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
       }
-
+      input:focus {
+        border-color: #0056b3;
+        outline: none;
+      }
       button {
-        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
         font-size: 16px;
         cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
       }
-
+      button:hover {
+        background-color: #218838;
+      }
+      table {
+        width: 80%;
+        margin-top: 40px;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 12px 20px;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #f8f9fa;
+        color: #333;
+      }
+      td {
+        color: #555;
+      }
+      .success-message {
+        color: green;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 18px;
+      }
       .error-message {
         color: red;
         font-weight: bold;
+        font-size: 16px;
       }
     </style>
   </head>
   <body>
     <h2>Employee Details</h2>
-
     <form id="employeeForm">
       <label for="employeeId">Employee ID:</label>
       <input type="text" id="employeeId" placeholder="Enter Employee ID" />
-      <br /><br />
-
       <label for="employeeName">Employee Name:</label>
       <input type="text" id="employeeName" placeholder="Enter Employee Name" />
-      <br /><br />
-
       <label for="position">Position:</label>
       <input type="text" id="position" placeholder="Enter Position" />
-      <br /><br />
-
       <label for="salary">Salary:</label>
       <input type="number" id="salary" placeholder="Enter Salary" />
-      <br /><br />
-
       <button type="button" onclick="addEmployee()">Add Employee</button>
     </form>
-
     <table>
       <thead>
         <tr>
@@ -79,34 +122,27 @@
       </thead>
       <tbody id="employeeTable"></tbody>
     </table>
-
     <script>
       function addEmployee() {
         const employeeId = document.getElementById("employeeId").value;
         const employeeName = document.getElementById("employeeName").value;
         const position = document.getElementById("position").value;
         const salary = document.getElementById("salary").value;
-
         if (!employeeId || !employeeName || !position || !salary) {
           alert("Please fill in all fields.");
           return;
         }
-
         const table = document.getElementById("employeeTable");
         const row = table.insertRow();
-
         row.insertCell(0).textContent = employeeId;
         row.insertCell(1).textContent = employeeName;
         row.insertCell(2).textContent = position;
         row.insertCell(3).textContent = salary;
-
         document.getElementById("employeeForm").reset();
-
         const successMessage = document.createElement("p");
         successMessage.textContent = "Employee added successfully!";
         successMessage.classList.add("success-message");
         document.body.appendChild(successMessage);
-
         setTimeout(() => {
           successMessage.remove();
         }, 3000);
