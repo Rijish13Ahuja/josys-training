@@ -1,4 +1,4 @@
-## 7-11-2024
+# 7-11-2024
 
 ### Assignment-1
 ![Screenshot 2024-11-08 193919](https://github.com/user-attachments/assets/b91a58d4-3d56-4b9f-b6d1-2fce5666a22c)
@@ -16,7 +16,8 @@
 ![Screenshot 2024-11-10 161436](https://github.com/user-attachments/assets/9ad01e41-6063-4a41-9832-efb861041926)
 
 
-## 8-11-2024
+
+# 8-11-2024
 
 ### Assignment-1
 ![Screenshot 2024-11-10 162716](https://github.com/user-attachments/assets/6302c664-7d37-4ff3-b409-a679d284d6f7)
