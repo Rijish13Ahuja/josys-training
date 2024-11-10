@@ -14,3 +14,18 @@
 
 ### Assignment-5
 ![Screenshot 2024-11-10 161436](https://github.com/user-attachments/assets/9ad01e41-6063-4a41-9832-efb861041926)
+
+
+## 8-11-2024
+
+### Assignment-1
+![Screenshot 2024-11-10 162716](https://github.com/user-attachments/assets/6302c664-7d37-4ff3-b409-a679d284d6f7)
+
+### Assignment-2
+![Screenshot 2024-11-10 163040](https://github.com/user-attachments/assets/d62a20f7-a8c9-4dea-81c4-987aabc9753a)
+
+### Assignment-3
+![Screenshot 2024-11-10 163313](https://github.com/user-attachments/assets/6629ed82-d3e7-4a6b-a3d1-d4c80ffe2138)
+
+### Assignment-4
+![Screenshot 2024-11-10 163508](https://github.com/user-attachments/assets/1c9d66f8-05ea-424d-8b79-ee251acedf41)
