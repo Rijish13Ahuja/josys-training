@@ -30,3 +30,10 @@
 
 ### Assignment-4
 ![Screenshot 2024-11-10 163508](https://github.com/user-attachments/assets/1c9d66f8-05ea-424d-8b79-ee251acedf41)
+
+
+
+# 11-11-2024
+
+### Task
+![Screenshot 2024-11-11 130506](https://github.com/user-attachments/assets/faf89c32-f237-407d-b225-fe67372326b4)
