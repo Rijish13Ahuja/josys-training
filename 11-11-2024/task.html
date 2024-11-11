@@ -84,87 +84,79 @@
             font-weight: bold;
             color: #333;
         }
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+            .cart-section {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to Our Bookstore</h1>
-
     <div class="book-grid">
         <div class="book-card">
             <img src="https://resizing.flixster.com/7pW-Wl_tjIUnlcPkLYudVsZS-00=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2RkYTQyZjkxLWZjYzItNGM5Yy1hN2FiLTA0YWQwMTAzNjVmZC5qcGc=" alt="Book Image 1" />
             <h3>Book Title 1</h3>
             <p>Price: $12</p>
-            <button class="add-to-basket" onclick="addToBasket('Book Title 1', 12)">
-                Add to Cart
-            </button>
+            <button class="add-to-basket" onclick="addToBasket('Book Title 1', 12)">Add to Cart</button>
         </div>
         <div class="book-card">
             <img src="https://lumiere-a.akamaihd.net/v1/images/p_encanto_homeent_22359_4892ae1c.jpeg" alt="Book Image 2" />
             <h3>Book Title 2</h3>
             <p>Price: $15</p>
-            <button class="add-to-basket" onclick="addToBasket('Book Title 2', 15)">
-                Add to Cart
-            </button>
+            <button class="add-to-basket" onclick="addToBasket('Book Title 2', 15)">Add to Cart</button>
         </div>
         <div class="book-card">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWW7oafUlfsv6aKKwTBGzwXZMERovmN5v_vg&s" alt="Book Image 3" />
             <h3>Book Title 3</h3>
             <p>Price: $18</p>
-            <button class="add-to-basket" onclick="addToBasket('Book Title 3', 18)">
-                Add to Cart
-            </button>
+            <button class="add-to-basket" onclick="addToBasket('Book Title 3', 18)">Add to Cart</button>
         </div>
         <div class="book-card">
             <img src="https://www.uphe.com/sites/default/files/styles/scale__344w_/public/2024/06/TheFallGuy_PosterArt.jpg?itok=yTnTwS8Z" alt="Book Image 4" />
             <h3>Book Title 4</h3>
             <p>Price: $20</p>
-            <button class="add-to-basket" onclick="addToBasket('Book Title 4', 20)">
-                Add to Cart
-            </button>
+            <button class="add-to-basket" onclick="addToBasket('Book Title 4', 20)">Add to Cart</button>
         </div>
         <div class="book-card">
             <img src="https://m.media-amazon.com/images/M/MV5BZmFkMjE4NjQtZTVmZS00MDZjLWE2ZmEtZTkzODljNjhlNWUxXkEyXkFqcGc@._V1_.jpg" alt="Book Image 5" />
             <h3>Book Title 5</h3>
             <p>Price: $22</p>
-            <button class="add-to-basket" onclick="addToBasket('Book Title 5', 22)">
-                Add to Cart
-            </button>
+            <button class="add-to-basket" onclick="addToBasket('Book Title 5', 22)">Add to Cart</button>
         </div>
         <div class="book-card">
             <img src="https://cdn.moviefone.com/admin-uploads/posters/piecebypiece-movie-poster_1724959012.jpg?d=360x540&q=80" alt="Book Image 6" />
             <h3>Book Title 6</h3>
             <p>Price: $25</p>
-            <button class="add-to-basket" onclick="addToBasket('Book Title 6', 25)">
-                Add to Cart
-            </button>
+            <button class="add-to-basket" onclick="addToBasket('Book Title 6', 25)">Add to Cart</button>
         </div>
     </div>
-
     <div class="cart-section">
         <h2>Your Cart</h2>
         <div id="cart-items"></div>
         <p class="cart-total">Total: $<span id="total-price">0</span></p>
     </div>
-
     <script>
         const cart = [];
-
         function addToBasket(title, price) {
             cart.push({ title, price });
             renderCart();
         }
-
         function removeFromCart(index) {
             cart.splice(index, 1);
             renderCart();
         }
-
         function renderCart() {
             const cartItemsContainer = document.getElementById("cart-items");
             const totalPriceEl = document.getElementById("total-price");
             cartItemsContainer.innerHTML = "";
             let total = 0;
-
             cart.forEach((item, index) => {
                 const itemEl = document.createElement("div");
                 itemEl.className = "cart-item";
@@ -175,7 +167,6 @@
                 cartItemsContainer.appendChild(itemEl);
                 total += item.price;
             });
-
             totalPriceEl.innerText = total.toFixed(2);
         }
     </script>
