@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f3f8;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .card {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .card h2 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .book-list {
+        list-style-type: none;
+        padding: 0;
+        color: #555;
+      }
+      .book-list li {
+        margin: 5px 0;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+      .form-group input,
+      .form-group select {
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+      }
+      .button {
+        padding: 10px;
+        border: none;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .button-primary {
+        background-color: #007bff;
+      }
+      .button-primary:hover {
+        background-color: #0069d9;
+      }
+      .button-success {
+        background-color: #28a745;
+      }
+      .button-success:hover {
+        background-color: #218838;
+      }
+      .button-danger {
+        background-color: #dc3545;
+      }
+      .button-danger:hover {
+        background-color: #c82333;
+      }
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Library Management System</h1>
+    <div class="container">
+      <div class="card">
+        <h2>Available Books</h2>
+        <ul id="availableBooks" class="book-list">
+          <li>Book1 by Author1</li>
+          <li>Book2 by Author2</li>
+          <li>Book3 by Author3</li>
+        </ul>
+        <button class="button button-primary" onclick="addBook()">
+          + Add Book
+        </button>
+      </div>
+      <div class="card">
+        <h2>Borrowed Books by Users</h2>
+        <ul id="borrowedBooks" class="book-list"></ul>
+      </div>
+      <div class="card">
+        <h2>Create User / Member</h2>
+        <div class="form-group">
+          <label for="userName">Name:</label>
+          <input type="text" id="userName" placeholder="Enter Name" />
+        </div>
+        <div class="form-group">
+          <label for="membershipId">Membership ID (Optional):</label>
+          <input type="text" id="membershipId" placeholder="Membership ID" />
+        </div>
+        <button class="button button-primary" onclick="createUser()">
+          Create User / Member
+        </button>
+      </div>
+      <div class="card">
+        <h2>Borrow a Book</h2>
+        <div class="form-group">
+          <label for="bookSelect">Select a book:</label>
+          <select id="bookSelect">
+            <option>Select a book</option>
+            <option>Book1 by Author1</option>
+            <option>Book2 by Author2</option>
+            <option>Book3 by Author3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="userSelect">Select User:</label>
+          <select id="userSelect">
+            <option>Select a user</option>
+          </select>
+        </div>
+        <button class="button button-success" onclick="borrowBook()">
+          Borrow Book
+        </button>
+      </div>
+      <div class="card">
+        <h2>Return a Book</h2>
+        <div class="form-group">
+          <label for="returnBookSelect">Select a borrowed book:</label>
+          <select id="returnBookSelect">
+            <option>Select a borrowed book</option>
+          </select>
+        </div>
+        <button class="button button-danger" onclick="returnBook()">
+          Return Book
+        </button>
+      </div>
+    </div>
+    <script>
+      let users = [];
+      let borrowedBooks = [];
+
+      function addBook() {
+        const bookName = prompt(
+          "Enter book name and author (e.g., Book4 by Author4):"
+        );
+        if (bookName) {
+          const availableBooks = document.getElementById("availableBooks");
+          const option = document.createElement("option");
+          option.textContent = bookName;
+          document.getElementById("bookSelect").appendChild(option);
+          const li = document.createElement("li");
+          li.textContent = bookName;
+          availableBooks.appendChild(li);
+        }
+      }
+
+      function createUser() {
+        const userName = document.getElementById("userName").value;
+        const membershipId =
+          document.getElementById("membershipId").value || "N/A";
+        if (userName) {
+          users.push({ userName, membershipId });
+          const userSelect = document.getElementById("userSelect");
+          const option = document.createElement("option");
+          option.textContent = userName;
+          userSelect.appendChild(option);
+          alert(`User created: ${userName} (ID: ${membershipId})`);
+          document.getElementById("userName").value = "";
+          document.getElementById("membershipId").value = "";
+        } else {
+          alert("Please enter a name.");
+        }
+      }
+
+      function borrowBook() {
+        const bookSelect = document.getElementById("bookSelect");
+        const userSelect = document.getElementById("userSelect");
+        const selectedBook = bookSelect.value;
+        const selectedUser = userSelect.value;
+
+        if (
+          selectedBook !== "Select a book" &&
+          selectedUser !== "Select a user"
+        ) {
+          borrowedBooks.push({ book: selectedBook, user: selectedUser });
+          updateBorrowedBooks();
+          bookSelect.value = "Select a book";
+          userSelect.value = "Select a user";
+          alert(`Book borrowed: ${selectedBook} by ${selectedUser}`);
+        } else {
+          alert("Please select both a book and a user.");
+        }
+      }
+
+      function updateBorrowedBooks() {
+        const borrowedBooksList = document.getElementById("borrowedBooks");
+        const returnBookSelect = document.getElementById("returnBookSelect");
+        borrowedBooksList.innerHTML = "";
+        returnBookSelect.innerHTML = "<option>Select a borrowed book</option>";
+
+        borrowedBooks.forEach((record) => {
+          const li = document.createElement("li");
+          li.textContent = `${record.book} (borrowed by ${record.user})`;
+          borrowedBooksList.appendChild(li);
+
+          const option = document.createElement("option");
+          option.textContent = `${record.book} (borrowed by ${record.user})`;
+          returnBookSelect.appendChild(option);
+        });
+      }
+
+      function returnBook() {
+        const returnBookSelect = document.getElementById("returnBookSelect");
+        const selectedBook = returnBookSelect.value;
+
+        if (selectedBook !== "Select a borrowed book") {
+          borrowedBooks = borrowedBooks.filter(
+            (record) =>
+              `${record.book} (borrowed by ${record.user})` !== selectedBook
+          );
+          updateBorrowedBooks();
+          alert(`Book returned: ${selectedBook}`);
+        } else {
+          alert("Please select a book to return.");
+        }
+      }
+    </script>
+  </body>
+</html>
