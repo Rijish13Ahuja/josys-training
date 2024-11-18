@@ -1,0 +1,1 @@
+The useMemo hook in React is used to optimize performance by memoizing the result of a computation. It ensures that expensive calculations are only performed when their dependencies change, rather than on every render.
