@@ -45,3 +45,10 @@
 
 ### Task
 ![Screenshot 2024-11-11 130506](https://github.com/user-attachments/assets/faf89c32-f237-407d-b225-fe67372326b4)
+
+
+# 18-11-2024
+
+### Task
+![Screenshot 2024-11-18 170933](https://github.com/user-attachments/assets/906667cc-52a3-4d6a-b6a3-4fcc12be8665)
+
