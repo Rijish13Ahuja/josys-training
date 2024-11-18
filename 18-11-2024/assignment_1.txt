@@ -1,1 +1,35 @@
 The useMemo hook in React is used to optimize performance by memoizing the result of a computation. It ensures that expensive calculations are only performed when their dependencies change, rather than on every render.
+
+Syntax:
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+Example:
+import React, { useState, useMemo } from "react";
+
+function Example() {
+  const [count, setCount] = useState(0);
+  const [toggle, setToggle] = useState(false);
+
+  const expensiveValue = useMemo(() => {
+    console.log("Expensive computation running...");
+    return count * 2;
+  }, [count]); 
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <p>Expensive Value: {expensiveValue}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setToggle(!toggle)}>
+        Toggle: {toggle ? "ON" : "OFF"}
+      </button>
+    </div>
+  );
+}
+
+export default Example;
+
+1) expensiveValue is recalculated only when count changes.
+2) Toggling the button does not trigger the expensive computation.
+3) This prevents unnecessary calculations on every render.
+
