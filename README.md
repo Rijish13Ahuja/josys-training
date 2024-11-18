@@ -49,6 +49,8 @@
 
 # 18-11-2024
 
-### Task
+### Assignment-2
 ![Screenshot 2024-11-18 170933](https://github.com/user-attachments/assets/906667cc-52a3-4d6a-b6a3-4fcc12be8665)
 
+### Assignment-4
+![Screenshot 2024-11-18 175155](https://github.com/user-attachments/assets/c9905aa3-44ab-47a9-bed4-63a684e6ec87)
