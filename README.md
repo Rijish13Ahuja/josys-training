@@ -47,6 +47,7 @@
 ![Screenshot 2024-11-11 130506](https://github.com/user-attachments/assets/faf89c32-f237-407d-b225-fe67372326b4)
 
 
+
 # 18-11-2024
 
 ### Assignment-2
@@ -54,3 +55,25 @@
 
 ### Assignment-4
 ![Screenshot 2024-11-18 175155](https://github.com/user-attachments/assets/c9905aa3-44ab-47a9-bed4-63a684e6ec87)
+
+
+
+# 19-11-2024
+
+### Task-1
+![Screenshot 2024-11-19 164609](https://github.com/user-attachments/assets/bca1af67-1e0d-481e-86ee-598d2f799349)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
