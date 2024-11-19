@@ -1,0 +1,17 @@
+Class components in React have lifecycle methods that allow developers to hook into specific points during a component's existence. These methods can be categorized into three phases: Mounting, Updating, and Unmounting.
+
+1. Mounting Phase (Component is created and added to the DOM)
+constructor(props): Initialize state and bind methods.
+static getDerivedStateFromProps(props, state): Update state based on props.
+render(): Return JSX to render UI.
+componentDidMount(): Perform side effects (e.g., API calls, subscriptions).
+
+2. Updating Phase (Component re-renders due to state/props changes)
+static getDerivedStateFromProps(props, state): Update state based on new props.
+shouldComponentUpdate(nextProps, nextState): Decide if re-rendering is necessary.
+render(): Return updated JSX.
+getSnapshotBeforeUpdate(prevProps, prevState): Capture DOM info (e.g., scroll position).
+componentDidUpdate(prevProps, prevState, snapshot): Perform side effects after update.
+
+3. Unmounting Phase (Component is removed from the DOM)
+componentWillUnmount(): Cleanup (e.g., remove event listeners, cancel API calls).
