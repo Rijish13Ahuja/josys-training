@@ -1,0 +1,35 @@
+In React, components can re-render whenever the state or props change. The useCallback() hook helps to optimize this by memorizing a function. This means React will keep track of the function and only recreate it when its dependencies change. This prevents the function from being recreated on every render, improving performance.
+
+Syntax:
+const memoizedCallback = useCallback(() => {
+
+}, [dependencies]);
+
+
+Example:
+import React, { useState, useCallback } from 'react';
+
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  const increment = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <Child increment={increment} />
+    </div>
+  );
+}
+
+function Child({ increment }) {
+  console.log('Child re-rendered');
+  return <button onClick={increment}>Increment</button>;
+}
+
+export default Parent;
+
+The increment function will only be recreated if count changes. If the parent re-renders without changing count, the increment function will stay the same, and the Child component won't re-render.
+
