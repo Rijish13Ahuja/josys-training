@@ -1,0 +1,58 @@
+import React, { createContext, useState, ReactNode } from "react";
+import AuthContext, { User } from "./AuthContext";
+
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
+const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null); // State to store the logged-in user
+
+  // Method to log in a user
+  const login = (user: User) => {
+    setUser(user);
+  };
+
+  // Method to log out a user
+  const logout = () => {
+    setUser(null);
+  };
+
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        login,
+        logout,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export { AuthProvider };
+
+
+Explanation
+
+React Functional Components:
+Functional components are simpler and rely on hooks like useState and useContext for managing state and context. In this case, AuthProvider is a functional component that uses hooks to manage authentication state.
+
+useState Hook:
+The useState hook is used to create and manage the user state.
+user holds the current user object, and setUser is used to update the user.
+
+login and logout Methods:
+login: Accepts a User object and updates the state using setUser(user).
+logout: Resets the state by setting user to null.
+
+AuthContext.Provider:
+This provides the user, login, and logout values to the child components using the value prop.
+It enables any child component to consume the context to access authentication details.
+
+Props and Children:
+The children prop is used to render any components nested within the AuthProvider. This allows the provider to wrap parts of your app and share its context with them.
+
+Simplification:
+Functional components with hooks often lead to more concise and readable code compared to class components.
