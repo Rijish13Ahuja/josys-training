@@ -1,0 +1,82 @@
+The Context API in React allows you to share data (state) across components without having to pass props manually through every level of the component tree. When using Class Components, the Context API works slightly differently than with functional components. 
+
+1)Created a Context:
+import React from 'react';
+
+interface ContextType {
+    user: string;
+    updateUser: (name: string) => void;
+}
+
+const UserContext = React.createContext<ContextType | null>(null);
+export default UserContext;
+
+2)Created a Provider Component:
+import React, { Component } from 'react';
+import UserContext from './UserContext';
+
+interface State {
+    user: string;
+}
+
+export class UserProvider extends Component<{}, State> {
+    state = {
+        user: 'John Doe',
+    };
+
+    updateUser = (name: string) => {
+        this.setState({ user: name });
+    };
+
+    render() {
+        return (
+            <UserContext.Provider
+                value={{
+                    user: this.state.user,
+                    updateUser: this.updateUser,
+                }}
+            >
+                {this.props.children}
+            </UserContext.Provider>
+        );
+    }
+}
+
+3) Context in a Class Component: Used contextType to access the context in a class component.
+import React, { Component } from 'react';
+import UserContext from './UserContext';
+
+class UserProfile extends Component {
+    static contextType = UserContext; 
+
+    render() {
+        const context = this.context; 
+        if (!context) return <p>No Context Available</p>;
+
+        const { user, updateUser } = context;
+        return (
+            <div>
+                <h1>User Profile</h1>
+                <p>Name: {user}</p>
+                <button onClick={() => updateUser('Jane Smith')}>
+                    Update User
+                </button>
+            </div>
+        );
+    }
+}
+
+export default UserProfile;
+
+4)Used Provider and Consumer in the App: Wrapped components with the Provider to share context data.
+import React from 'react';
+import { UserProvider } from './UserProvider';
+import UserProfile from './UserProfile';
+
+const App: React.FC = () => (
+    <UserProvider>
+        <UserProfile />
+    </UserProvider>
+);
+
+export default App;

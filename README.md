@@ -60,12 +60,11 @@
 
 # 19-11-2024
 
-### Task-1
+### Task-2
 ![Screenshot 2024-11-19 164609](https://github.com/user-attachments/assets/bca1af67-1e0d-481e-86ee-598d2f799349)
 
-
-
-
+### Task-3
+![Screenshot 2024-11-19 203844](https://github.com/user-attachments/assets/e7cdfaad-4703-4f54-8fc9-aff74ceb9e80)
 
 
 
