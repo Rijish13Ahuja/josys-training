@@ -1,0 +1,64 @@
+.customer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.customer img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.customer div {
+  flex: 1;
+}
+
+.customer h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.customer p {
+  margin: 0.25rem 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem; /* Adds space between the Edit and Delete buttons */
+}
+
+.customer button {
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.customer button:hover {
+  background-color: #218838;
+}
+
+.customer button:last-child {
+  background-color: #dc3545;
+}
+
+.customer button:last-child:hover {
+  background-color: #c82333;
+}

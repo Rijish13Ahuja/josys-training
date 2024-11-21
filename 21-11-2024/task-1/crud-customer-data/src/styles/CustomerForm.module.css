@@ -1,0 +1,134 @@
+.customerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: auto;
+}
+
+.customerForm div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.customerForm label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.customerForm input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.customerForm input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.error {
+  font-size: 12px;
+  color: #d9534f;
+  margin-top: 2px;
+  font-style: italic;
+}
+
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+button[type="button"] {
+  background-color: #6c757d;
+}
+
+button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+.customerManagement {
+  background-color: #fff;
+  border: 1px solid #e3e6ea;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.customerManagement h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.customerManagement ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.customerManagement li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e3e6ea;
+}
+
+.customerManagement li:last-child {
+  border-bottom: none;
+}
+
+.customerManagement button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.customerManagement button.edit {
+  background-color: #ffc107;
+}
+
+.customerManagement button.edit:hover {
+  background-color: #e0a800;
+}
+
+.customerManagement button.delete {
+  background-color: #dc3545;
+}
+
+.customerManagement button.delete:hover {
+  background-color: #c82333;
+}
