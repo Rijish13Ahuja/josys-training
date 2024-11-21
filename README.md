@@ -71,6 +71,11 @@
 # 20-11-2024
 ![Screenshot 2024-11-20 170605](https://github.com/user-attachments/assets/530c37c2-5cda-4a3f-8ed7-6a596fdbcdfc)
 
+# 21-11-2024
+
+### Task-1
+![Screenshot 2024-11-21 173318](https://github.com/user-attachments/assets/546e3a9a-48a8-4f9d-b20b-5aaab25845d6)
+
 
 
 
