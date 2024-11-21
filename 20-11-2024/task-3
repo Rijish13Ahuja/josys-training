@@ -1,0 +1,67 @@
+React Query is a library for managing server state in React applications. It simplifies fetching, caching, synchronizing, and updating server data. Unlike local state, which is managed directly with tools like React's useState or useReducer, server state requires managing asynchronous data fetching, caching, and re-fetching on updates.
+
+Managinging State with React Query:
+
+React Query uses hooks like useQuery and useMutation to manage state. These hooks internally handle:
+->Fetching data from APIs.
+->Caching responses.
+->Tracking the loading, success, and error states.
+
+Example:
+
+Setting up a React Query Client:
+
+import React from "react";
+import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <Posts />
+  </QueryClientProvider>
+);
+
+export default App;
+
+Fetching Data Using useQuery:
+
+import React from "react";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+
+const fetchPosts = async () => {
+  const { data } = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  return data;
+};
+
+const Posts = () => {
+  const { data, isLoading, isError, error } = useQuery(["posts"], fetchPosts);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error: {error.message}</p>;
+
+  return (
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {data.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Posts;
+
+
+Explanation of the Example:
+QueryClientProvider: Wraps out application to provide React Query functionality.
+useQuery:
+Takes a key (["posts"]) to identify the query.
+Fetches data using the fetchPosts function.
+States:
+isLoading: True when data is being fetched.
+isError: True if the fetch fails.
+data: Contains the fetched data.

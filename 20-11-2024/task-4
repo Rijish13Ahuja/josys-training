@@ -1,0 +1,11 @@
+JSON Server is a tool for setting up a fake REST API with minimal configuration. It allows us to quickly create a mock backend that can be used for development or testing purposes. This server supports CRUD operations (Create, Read, Update, Delete) on JSON data, and it's especially useful for front-end developers when the backend isn't ready yet.
+
+Key Features of JSON Server:
+Quick setup: Instantly create a REST API from a JSON file.
+CRUD operations: Supports all basic REST API methods (GET, POST, PUT, PATCH, DELETE).
+
+To get data from JSON Server in React, we typically:
+ 1) Set up JSON Server with mock data.
+ 2) Use Axios or Fetch API to send requests to JSON Server.
+ 3) Use React hooks like useEffect to trigger the request and useState to store the data.
+ 4) Handle loading, error, and success states to provide a smooth user experience.
