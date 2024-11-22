@@ -77,6 +77,8 @@
 ![Screenshot 2024-11-21 173318](https://github.com/user-attachments/assets/546e3a9a-48a8-4f9d-b20b-5aaab25845d6)
 
 
+### Task-2
+![image](https://github.com/user-attachments/assets/25d41d44-b201-437d-b1f3-8b928af034ea)
 
 
 
