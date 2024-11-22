@@ -1,0 +1,82 @@
+/* General App styling */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Customer form, list, and top purchasers */
+.customerForm {
+  flex: 1;
+  min-width: 30%;
+}
+
+.customerList {
+  flex: 1;
+  min-width: 30%;
+  margin-top: 0; /* Ensure no extra margin at the top */
+}
+
+.topPurchasers {
+  flex: 1;
+  min-width: 30%;
+}
+
+/* Ensuring body has no margin or padding */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Additional styling for customer list table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-size: 1rem;
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table tr:hover {
+  background-color: #f9f9f9;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 10px;
+}
+
+button:last-child {
+  background-color: #f44336;
+}
+
+button:hover {
+  filter: brightness(1.2);
+}
