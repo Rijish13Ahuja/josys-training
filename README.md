@@ -80,6 +80,8 @@
 ### Task-2
 ![image](https://github.com/user-attachments/assets/25d41d44-b201-437d-b1f3-8b928af034ea)
 
+### Task-3
+![image](https://github.com/user-attachments/assets/00396a32-04d3-4a64-bbec-bcf336ab8700)
 
 
 
