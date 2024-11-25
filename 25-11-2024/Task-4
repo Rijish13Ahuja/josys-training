@@ -1,0 +1,17 @@
+# Unit Testing in JavaScript
+
+-> Unit testing is the process of testing individual units (functions or components) of code to ensure they work as expected. Unit tests are designed to test the logic of a specific function or method to validate that the output matches the expected result for given inputs. These tests help identify bugs early and ensure that new code does not break existing functionality.
+
+### Why Write Unit Tests?
+Catch Bugs Early: Detect issues early during development.
+Improve Code Quality: Ensure the code works as intended and prevent regressions.
+Facilitate Refactoring: Safely modify code without breaking functionality.
+Documentation: Tests serve as documentation of how a function behaves.
+### Who Writes Unit Tests?
+Developers: Usually write unit tests during the development process.
+Test Engineers/QA: May assist in writing tests for more comprehensive coverage.
+Popular JavaScript Testing Libraries
+Jest: Easy setup, built-in mocks, and works great for React.
+Mocha: Flexible and works with various assertion libraries (e.g., Chai).
+Jasmine: Behavior-driven testing with built-in spies and mocks.
+Chai: Assertion library often used with Mocha.
