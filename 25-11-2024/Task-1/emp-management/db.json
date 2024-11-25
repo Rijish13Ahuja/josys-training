@@ -1,0 +1,40 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "position": "Software Engineer"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "position": "Project Manager"
+    },
+    {
+      "id": "3",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "position": "Data Analyst"
+    },
+    {
+      "id": "4",
+      "name": "Bob Brown",
+      "email": "bob.brown@example.com",
+      "position": "UI/UX Designer"
+    },
+    {
+      "id": "5",
+      "name": "Charlie White",
+      "email": "charlie.white@example.com",
+      "position": "DevOps Engineer"
+    },
+    {
+      "id": "1303",
+      "name": "Rijish Ahuja",
+      "email": "rhythm00ahuja@gmail.com",
+      "position": "Software Development Engineer (Full Stack)"
+    }
+  ]
+}
