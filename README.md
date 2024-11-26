@@ -84,8 +84,11 @@
 ![image](https://github.com/user-attachments/assets/00396a32-04d3-4a64-bbec-bcf336ab8700)
 
 
-
-
+# 25-11-2024
+### Task-1
+![Screenshot 2024-11-25 195734](https://github.com/user-attachments/assets/5e8b34ac-e061-463e-b23f-5fe5bae7a749)
+### Task-2
+![Screenshot 2024-11-25 230658](https://github.com/user-attachments/assets/476358d4-4745-4c47-964a-d6b8b1f68b89)
 
 
 
