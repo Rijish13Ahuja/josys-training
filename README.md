@@ -92,6 +92,9 @@
 ### Task-3
 ![image](https://github.com/user-attachments/assets/4f4b5592-6e92-4d74-af33-1ded73d491d3)
 
+# 26-11-2024
+### Task-1
+![image](https://github.com/user-attachments/assets/f6e58993-9362-48d0-9ef0-1aaee520b9b6)
 
 
 
