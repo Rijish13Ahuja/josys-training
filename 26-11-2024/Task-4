@@ -1,0 +1,30 @@
+Mocking in Unit Testing
+Mocking is the process of replacing real dependencies (like functions, APIs, or modules) with fake implementations during testing. This isolates the unit under test and ensures that external factors don't affect the test outcomes.
+
+For example:
+Instead of calling a real API, we simulate its response to test how our component behaves.
+
+How to Mock Functions in React Testing Library?
+Mocking is typically done using Jest in React Testing Library. Here's a simple example:
+
+Mocking a Function:
+Suppose we have a function login used in a component:
+export const login = (username) => `Welcome, ${username}`;
+
+To test a component using this function:
+
+Mock the function:
+jest.mock('./loginFunction', () => ({
+  login: jest.fn(),
+}));
+
+In the test, control the behavior of the mock:
+Implementation((username) => `Mocked login for ${username}`);
+
+Verify it was called:
+expect(login).toHaveBeenCalledWith("testUser");
+
+Why Mocking is Important?
+Isolates the unit under test.
+Avoids dependencies like network requests or databases.
+Speeds up tests and allows testing edge cases.
