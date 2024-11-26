@@ -1,0 +1,106 @@
+.operationsContainer {
+  background: linear-gradient(135deg, #f0f4f8, #dfe9f3);
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out;
+  backdrop-filter: blur(10px); 
+}
+
+h2 {
+  color: #2d3e50;
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #3498db, #8e44ad);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding: 5px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #7f8c8d;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #b0c4de;
+  border-radius: 8px;
+  font-size: 18px;
+  background-color: #f8f9fa;
+  color: #333;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #3498db;
+  background-color: #e3f2fd;
+  outline: none;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.total {
+  margin-top: 25px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+  letter-spacing: 1px;
+}
+
+button:active {
+  background-color: #1e5a7b;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+label:hover {
+  color: #3498db;
+  transform: translateX(5px);
+}
