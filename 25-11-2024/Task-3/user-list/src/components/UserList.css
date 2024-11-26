@@ -1,0 +1,44 @@
+.userlist-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .userlist-header {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .userlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .userlist-item {
+    padding: 10px 20px;
+    margin: 10px auto;
+    background-color: #ffffff33;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .userlist-item:hover {
+    background-color: #ffffff55;
+    transform: scale(1.05);
+  }
+  

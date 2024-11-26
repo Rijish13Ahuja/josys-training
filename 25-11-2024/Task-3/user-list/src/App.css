@@ -1,0 +1,28 @@
+.app-container {
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.app-header {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.search-input {
+  padding: 10px;
+  width: 60%;
+  max-width: 400px;
+  border: 2px solid #6a11cb;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 10px rgba(37, 117, 252, 0.5);
+}
