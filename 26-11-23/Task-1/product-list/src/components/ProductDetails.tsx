@@ -31,7 +31,8 @@ const ProductDetails: React.FC = () => {
 
   return (
     <div className={styles.operationsContainer}>
-      <h2>Products</h2>
+      <h2>Product Details</h2>
+
       <label htmlFor="item">Product Name:</label>
       <input
         type="text"
@@ -59,9 +60,18 @@ const ProductDetails: React.FC = () => {
         placeholder="Enter quantity"
       />
 
-      <button onClick={calculateTotal}>Calculate Total</button>
+      <a
+        href="#"
+        className={styles.calculateLink}
+        onClick={(e) => {
+          e.preventDefault(); 
+          calculateTotal();
+        }}
+      >
+        Calculate Total
+      </a>
 
-      <h3 className={styles.total}>{total}</h3>
+      <p className={styles.total}>{total}</p>
     </div>
   );
 };
