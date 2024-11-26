@@ -89,6 +89,8 @@
 ![Screenshot 2024-11-25 195734](https://github.com/user-attachments/assets/5e8b34ac-e061-463e-b23f-5fe5bae7a749)
 ### Task-2
 ![Screenshot 2024-11-25 230658](https://github.com/user-attachments/assets/476358d4-4745-4c47-964a-d6b8b1f68b89)
+### Task-3
+![image](https://github.com/user-attachments/assets/4f4b5592-6e92-4d74-af33-1ded73d491d3)
 
 
 
